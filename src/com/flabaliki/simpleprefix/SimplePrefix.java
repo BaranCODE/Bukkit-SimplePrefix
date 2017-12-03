@@ -93,17 +93,16 @@ public class SimplePrefix extends JavaPlugin implements Listener
     String prefix = config.getPrefix(player);
     String suffix = config.getSuffix(player);
     String world = config.getWorld(player);
-    String message = event.getMessage().replaceAll("%", "%%");
     if (template == null) template = "<[time] [world] [prefix][name][suffix]> ";
     if (timeFormat == null) timeFormat = "[h:mm aa]";
-    String formattedName = template.replaceAll("\\[world\\]", world).replaceAll("\\[prefix\\]", prefix).replaceAll("\\[name\\]", player.getDisplayName()).replaceAll("\\[suffix\\]", suffix).replaceAll("(&([A-Fa-f0-9L-Ol-okKrR]))", "§$2");
+    String formattedName = template.replaceAll("\\[world\\]", world).replaceAll("\\[prefix\\]", prefix).replaceAll("\\[name\\]", "%1\\$s").replaceAll("\\[suffix\\]", suffix).replaceAll("(&([A-Fa-f0-9L-Ol-okKrR]))", "§$2");
     if ((timeFormat != null) && (!timeFormat.equalsIgnoreCase("")) && (formattedName.contains("[time]"))) {
       DateFormat dateFormat = new SimpleDateFormat(timeFormat);
       Date date = new Date();
       formattedName = formattedName.replaceAll("\\[time\\]", String.valueOf(dateFormat.format(date)));
     }
     formattedName = formattedName.replaceAll("\\s+", " ");
-    event.setFormat(formattedName + message);
+    event.setFormat(formattedName + "%2$s");
   }
   
   @EventHandler
