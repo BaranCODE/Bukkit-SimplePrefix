@@ -115,7 +115,7 @@ public class Config
   public String getWorld(Player player) {
     String world = "";
     if (config.getString("Worlds." + player.getWorld().getName() + ".nickname") != null) {
-      world = config.getString("Worlds." + player.getWorld().getName() + ".nickname").replaceAll("(&([A-Fa-f0-9L-Ol-okKrR]))", "ง$2");
+      world = config.getString("Worlds." + player.getWorld().getName() + ".nickname").replaceAll("(&([A-Fa-f0-9L-Ol-okKrR]))", "ยง$2");
     }
     return world;
   }
