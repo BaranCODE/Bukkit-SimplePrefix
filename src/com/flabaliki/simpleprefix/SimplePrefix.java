@@ -61,10 +61,6 @@ public class SimplePrefix extends JavaPlugin implements Listener
     	}
     }
     
-    if (autoupdate){
-    	new Updater(this, 31141, this.getFile(), Updater.UpdateType.DEFAULT, true);
-    }
-    
     if (Config.config.getBoolean("Use-Vault")) setupChat();
   }
   
@@ -96,7 +92,7 @@ public class SimplePrefix extends JavaPlugin implements Listener
     String message = event.getMessage().replaceAll("%", "%%");
     if (template == null) template = "<[time] [world] [prefix][name][suffix]> ";
     if (timeFormat == null) timeFormat = "[h:mm aa]";
-    String formattedName = template.replaceAll("\\[world\\]", world).replaceAll("\\[prefix\\]", prefix).replaceAll("\\[name\\]", player.getDisplayName()).replaceAll("\\[suffix\\]", suffix).replaceAll("(&([A-Fa-f0-9L-Ol-okKrR]))", "§$2");
+    String formattedName = template.replaceAll("\\[world\\]", world).replaceAll("\\[prefix\\]", prefix).replaceAll("\\[name\\]", player.getDisplayName()).replaceAll("\\[suffix\\]", suffix).replaceAll("(&([A-Fa-f0-9L-Ol-okKrR]))", "ï¿½$2");
     if ((timeFormat != null) && (!timeFormat.equalsIgnoreCase("")) && (formattedName.contains("[time]"))) {
       DateFormat dateFormat = new SimpleDateFormat(timeFormat);
       Date date = new Date();
