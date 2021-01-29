@@ -221,15 +221,15 @@ public class SprCommand implements CommandExecutor
     if (change.equalsIgnoreCase("remove"))
       sender.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + " > " + ChatColor.WHITE + item + space + "for" + space + entityType + space + ChatColor.AQUA + entity + ChatColor.WHITE + space + ChatColor.RED + "removed.");
     else if (change.equalsIgnoreCase("set"))
-      sender.sendMessage((ChatColor.AQUA + "" + ChatColor.BOLD + " > " + ChatColor.WHITE + item + space + "for" + space + entityType + space + ChatColor.AQUA + entity + ChatColor.WHITE + space + ChatColor.GREEN + "set to" + ChatColor.WHITE + ":" + space + input).replaceAll("(&([A-Fa-f0-9L-Ol-okKrR]))", "§$2"));
+      sender.sendMessage((ChatColor.AQUA + "" + ChatColor.BOLD + " > " + ChatColor.WHITE + item + space + "for" + space + entityType + space + ChatColor.AQUA + entity + ChatColor.WHITE + space + ChatColor.GREEN + "set to" + ChatColor.WHITE + ":" + space + input).replaceAll("(&([A-Fa-f0-9L-Ol-okKrR]))", "ï¿½$2"));
   }
 
   private void showColours(CommandSender sender)
   {
     sender.sendMessage(ChatColor.AQUA + "[" + SimplePrefix.pluginName + " Colours] ");
     if ((sender instanceof Player)) {
-      sender.sendMessage("§0&0 §1&1 §2&2 §3&3 §4&4 §5&5 §6&6 §7&7 §8&8 §9&9 §A&A §B&B §C&C §D&D §E&E §F&F");
-      sender.sendMessage("§r§L&L§r §M&M§r §N&N§r §O&O§r §k&K§R (§r&R§r Reset)");
+      sender.sendMessage("ï¿½0&0 ï¿½1&1 ï¿½2&2 ï¿½3&3 ï¿½4&4 ï¿½5&5 ï¿½6&6 ï¿½7&7 ï¿½8&8 ï¿½9&9 ï¿½A&A ï¿½B&B ï¿½C&C ï¿½D&D ï¿½E&E ï¿½F&F");
+      sender.sendMessage("ï¿½rï¿½L&Lï¿½r ï¿½M&Mï¿½r ï¿½N&Nï¿½r ï¿½O&Oï¿½r ï¿½k&Kï¿½R (ï¿½r&Rï¿½r Reset)");
     } else {
       sender.sendMessage("| &0 Black     | &1 Dark Blue | &2 Dark Green | &3 Dark Aqua |");
       sender.sendMessage("| &4 Dark Red  | &5 Purple    | &6 Gold       | &7 Gray      |");
